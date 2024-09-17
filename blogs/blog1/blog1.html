@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="blog1.css">
+    <title>Blog 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+</head>
+<body>
+    <div class = "dabba">
+        <h1>The hype around OpenAI's o1</h1>
+    </div>
+    <div class="box2">
+        <p>The LLM space is moving pretty fast, and it&#39;s tough to catch up with the trends. After the hype around Anthropic&#39;s Claude 3.5 Sonnet, we recently saw Mistral releasing Pixtral-12B, their first multimodal AI (i.e., it can process both images and text), which was announced via a cryptic post on their Twitter. For developers, Pixtral is available on Hugging Face and uses 12 billion parameters for inference generation.</p>
+    
+        <img src="Pasted image 20240917132324.png" alt="o1">
+    
+        <p>OpenAI just released their o1 model, and the internet is going crazy with their rate limits. The o1 model is available for preview using the OpenAI APIs, of course, with rate limits. The real reason behind the hype is that o1 actually THINKS before it answers, and it outperforms GPT-4o.</p>
+        <p>The evaluation parameters range from AIME, Codeforces, and GPQA-Diamond, which is a series of PhD-level science questions and other reasoning-heavy benchmarks.</p>
+    </div>
+    <div class = "dabba">
+        <h1>Chain of thought: o1 thinks like a human</h1>
+    </div>
+
+    <div class ="box2">
+        <p>o1 uses a chain of thought when attempting to solve a problem. It develops a chain of thought and learns how to use it over time. It learns to break down tricky questions into simpler ones and adopts a different approach if the current one isn’t good enough.</p>
+        <p>OpenAI has kept the raw chains of thought private, but they believe that this hidden CoT can help in understanding the model’s thought process, hinting towards AGI?! Not sure. But there are people out there wondering if AGI is finally here because OpenAI introduced CoT. Well, in my opinion, AGI isn’t here (not because Sam Altman said no, lol). Considering AGI is such a broad and heavy term with multiple factors influencing its occurrence, I’d say AGI is certainly something we are going to see in the future (maybe the near future).</p>
+    </div>
+    <div class = "dabba">
+        <h1 id="for-the-devs-and-llm-nerds">For the Devs and LLM Nerds</h1>
+    </div>
+    <div class ="box2">
+        <ul>
+            <li>The model ranked in the 49th percentile at the 2024 International Olympiad in Informatics, and it competed under the same conditions as humans.</li>
+            <li>The developers later relaxed the submission policy and found significant improvements after further fine-tuning.</li>
+            <li>o1-preview and o1-mini are available using OpenAI&#39;s chat completions endpoint.</li>
+            <li>The context window of both models is 128,000 tokens.</li>
+        </ul>
+        
+        <img class="img2" src="Pasted image 20240917141803.png" alt="o1">
+        
+        <p>The maximum output token limits are:</p>
+        <ul>
+            <li>o1-preview: Up to 32,768 tokens</li>
+            <li>o1-mini: Up to 65,536 tokens</li>
+            <li>Y&#39;all can check out OpenAI&#39;s chat completion docs.</li>
+        </ul>
+        
+    </div>
+    <div class = "cc">
+        <p>freshlimesofa | 17-09-2024</p>
+    </div>
+</body>
+</html>
