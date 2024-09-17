@@ -74,7 +74,7 @@ img {
 }
 
 .box2 {
-        
+        font-size: large;
         background-color: black; /* same as body background color */
         border-radius: 15px; /* curved edges */
         border: 1px solid black; /* light border for visibility */
@@ -205,5 +205,6 @@ img {
 
     .dabba, .box2 {
         padding: 10px; /* Further adjust padding */
+        font-size: large;
     }
 }
