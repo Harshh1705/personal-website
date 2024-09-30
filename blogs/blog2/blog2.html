@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="blog2.css">
+    <title>Blog 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+</head>
+<body>
+    <div class = "dabba">
+        <h1>Understanding the use of LLM for ASR models (speech to text)</h1>
+    </div>
+    <div class="box2">
+        <p>This blog is my basic understanding of the research paper about Adapting Large Language Models with Speech for Fully Formatted End-to-End Speech Recognition, which can be found</p>
+        
+        <a href = "https://arxiv.org/pdf/2307.08234v2">here.</a>
+       <!--  <img src="Screenshot 2024-09-30 181002.png" alt="o1"> -->
+    
+        <p>The research paper is basically about an alternative approach using pretrained large language models for end-to-end automatic speech recognition (ASR). The model developed using this approach outperforms strong ASR models like Whisper by OpenAI as well as decoder-only based techniques.</p>
+        <p>An E2E ASR model is expected to convert speech signals into complete transcriptions, making it useful for certain NLP tasks as well. The researchers used approximately 78000 hours of transcribed audio as their dataset, while Whisper was trained in a supervised manner on 680,000 hours of audio.</p>
+    </div>
+    <div class = "dabba">
+        <h1>Development of ASR Models</h1>
+    </div>
+
+    <div class ="box2">
+        <p>The development of ASR models involves several preprocessing steps like text normalization and inverse text normalization.</p>
+
+        <ul>
+            <li>Text normalization refers to converting speech into its respective text counterpart. For example, "twenty-four" should be represented as 24 and "hundred percent" as 100%.</li>
+            <li>Inverse text normalization converts written text back into spoken form.</li>
+            
+        </ul>
+
+        <p>The following image shows the composition of an encoder-decoder architecture (with CTC as a loss function):</p>
+        <img src="Screenshot 2024-09-29 202806.png" alt="...">
+
+    </div>
+    <div class = "dabba">
+        <h1 id="for-the-devs-and-llm-nerds">using an encoder decoder based LLM approach</h1>
+    </div>
+    <div class ="box2">
+        <p>In this approach, both the text encoder and decoder are initialized using a pretrained LLM. Since the token size of the LLM is larger than the speech tokens, token embeddings for both input and output were fixed. It’s important to note that the text encoder is not required during the inference phase and is only used for training.</p>
+        <p>The primary loss functions used in this approach were CTC, Cross-Entropy (CE), and Masked Language Modeling (MLM):</p>
+        <ul>
+            <li>CE and MLM are applied to the outputs of the decoder.</li>
+            <li> CTC is applied during speech encoding (since it is a common loss function for ASR).</li>
+        </ul>
+
+        <p>Additionally, gradients and backpropagation were employed to update the model parameters during training.</p>
+    </div>
+    <div class = "dabba">
+        <h1 id="for-the-devs-and-llm-nerds">Encoder-Decoder vs. Decoder-Only</h1>
+    </div>
+
+    <div class = "box2">
+        <p> it's crucial to understand the fundamental difference between encoder-decoder and decoder-only architectures:</p>
+
+        <ul>
+            <li>An encoder-decoder architecture first transforms the input into a fixed-size vector representation. This vector is then decoded by the decoder to generate the output.</li>
+            <li> In a decoder-only architecture, the output is generated token by token based on the previously generated tokens, predicting one token at a time.</li>
+        </ul>
+
+        <p>There were also other stats mentioned, and y'all can have a look into the research paper to get to know the working in detail.</p>
+    </div>
+
+    <div class = "cc">
+        <p>freshlimesofa | 30-09-2024</p>
+    </div>
+</body>
+</html>
