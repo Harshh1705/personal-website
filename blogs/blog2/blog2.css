@@ -8,6 +8,13 @@ body {
     font-size: medium;
 }
 
+.content-wrapper {
+    width: 60%; /* Control the width of the content */
+    margin: 0 auto; /* Center the content */
+    padding: 40px;
+}
+
+
 /* Heading styles */
 h1 {
     font-size: 2.5em; /* Appropriate size for h1 */
@@ -56,7 +63,7 @@ img {
     height: auto;
     display: block;
     margin: 20px;
-    margin-left: 450px;
+    margin-left: 30px;
     margin-top:70px;
     margin-bottom:90px;
 }
@@ -206,5 +213,31 @@ img {
     .dabba, .box2 {
         padding: 10px; /* Further adjust padding */
         font-size: large;
+    }
+}
+
+@media (max-width: 576px) {
+    .content-wrapper {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.25em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    p, li {
+        font-size: 0.8em;
+    }
+
+    img {
+        max-width: 100%;
     }
 }
